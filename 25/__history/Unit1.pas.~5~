@@ -1,0 +1,84 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls, Vcl.Menus;
+
+type
+  TForm1 = class(TForm)
+    Label2: TLabel;
+    Label3: TLabel;
+    X1: TEdit;
+    X2: TEdit;
+    X3: TEdit;
+    Y1: TEdit;
+    Y2: TEdit;
+    Y4: TEdit;
+    Ñalculate: TButton;
+    P: TMemo;
+    Label4: TLabel;
+    Label1: TLabel;
+    Label5: TLabel;
+    S: TMemo;
+    Image1: TImage;
+    MainMenu1: TMainMenu;
+    Save1: TMenuItem;
+    Savereport1: TMenuItem;
+    Clise1: TMenuItem;
+    OpenDialog2: TOpenDialog;
+    N1: TMenuItem;
+    procedure ÑalculateClick(Sender: TObject);
+    procedure Clise1Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Clise1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TForm1.N1Click(Sender: TObject);
+begin
+if opendialog2.Execute then
+begin
+
+end;
+
+end;
+
+
+
+procedure TForm1.ÑalculateClick(Sender: TObject);
+var ax,ay,bx,by,cx,cy,Per,PR,Pl,AB,AC,BC:real;
+begin
+ax:= StrToFloat(X1.Text);
+ay:= StrToFloat(Y1.Text);
+bx:= StrToFloat(X2.Text);
+by:= StrToFloat(Y2.Text);
+cx:= StrToFloat(X3.Text);
+cy:= StrToFloat(X3.Text);
+AB:=sqrt(sqr(ax-bx)+sqr(ay-by));
+AC:=sqrt(sqr(cx-ax)+sqr(cy-ay));
+BC:=sqrt(sqr(cx-bx)+sqr(cy-by));
+PR:=AB+AC+BC;
+Per:=PR/2;
+PL:=sqrt(Per*(Per-AB)*(Per-AC)*(Per-BC));
+P.Text:=FloatToStr(PR);
+S.Text:=FloatToStr(PL);
+end;
+
+end.
