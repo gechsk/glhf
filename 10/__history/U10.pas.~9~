@@ -1,0 +1,63 @@
+
+unit U10;
+
+interface
+
+Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus;
+ Procedure Calculation1;
+ Procedure openfile;
+ Procedure save;
+ Procedure CheckData;
+
+implementation
+{€ умирал мен€ будили}
+ uses Unit1;
+Procedure Calculation1;//входные данные: высота, врем€
+ Const g=9.8;
+ var h,t:real;
+ begin
+ h:=StrToFloat(Form1.height.text[1]);
+ t:=sqrt(2*h/g);
+ Form1.Time.text:=FloatToStr(t);
+ end;
+
+ Procedure openfile;
+ var f: TextFile;
+FName,s: string;
+begin
+if Form1.opendialog1.Execute then
+begin
+FName:= Form1.OpenDialog1.FileName;
+AssignFile (f,FName);
+reset(f);
+end;
+readln(f,s);
+Form1.height.Text:=s;
+closefile(f);
+end;
+
+Procedure save;
+ var f: TextFile;
+FName,s : string;
+begin
+if Form1.SaveDialog1.Execute then
+FName:= Form1.SaveDialog1.FileName;
+AssignFile(f,Fname);
+Rewrite(f);
+ s:=Form1.height.Text;
+ Writeln(f,s);
+ CloseFile(f);
+end;
+
+
+Procedure CheckData;
+var Check:real;
+begin
+ if TryStrToFloat(Form1.height.Text[1],Check)= false then
+ begin
+   ShowMessage('The height parameter was entered incorrectly.');
+     exit;
+ end;
+end;
+end.

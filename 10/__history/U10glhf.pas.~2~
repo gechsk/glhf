@@ -1,0 +1,19 @@
+unit U10glhf;
+
+interface
+
+Uses SysUtils,Dialogs;
+
+
+implementation
+Procedure Calculation;
+
+ Const g=9.8;
+ var h,t:real;
+ begin
+ h:=StrToFloat(height.Text);
+ t:=sqrt(2*h/g);
+ Time.Text:=FloatToStr(t);
+ end;
+
+end.
