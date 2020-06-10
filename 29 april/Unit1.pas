@@ -67,8 +67,30 @@ begin
 end;
 
 procedure TForm1.Open1Click(Sender: TObject);
+
+var f: TextFile;
+FName,s1,s2,s3,s4,s5,s6 : string;
 begin
-OpenFile;
+if Form1.opendialog2.Execute then
+begin
+FName:= Form1.OpenDialog2.FileName;
+AssignFile (f,FName);
+
+Reset (f);
+ readln(f,s1); //считываем
+ readln(f,s2);
+ readln(f,s3);
+ readln(f,s4);
+ readln(f,s5);
+ readln(f,s6);
+ X1.lines[0]:= s1; //заполняем
+ X2.lines[0]:= s2;
+ X3.lines[0]:= s3;
+ Y1.lines[0]:= s4;
+ Y2.lines[0]:= s5;
+ Y3.lines[0]:= s6;
+CloseFile(f);
+end;
 end;
 procedure TForm1.Save2Click(Sender: TObject);
 begin

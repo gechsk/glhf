@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Calculating the time when a stone falls'
-  ClientHeight = 182
-  ClientWidth = 426
+  ClientHeight = 189
+  ClientWidth = 440
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,69 +13,102 @@ object Form1: TForm1
   Menu = MainMenu1
   OldCreateOrder = False
   DesignSize = (
-    426
-    182)
+    440
+    189)
   PixelsPerInch = 96
   TextHeight = 13
   object HeightLabel: TLabel
-    Left = 132
-    Top = 24
+    Left = 76
+    Top = 27
     Width = 35
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Height:'
+    ExplicitTop = 26
   end
   object TimeLabel: TLabel
-    Left = 141
-    Top = 64
+    Left = 85
+    Top = 67
     Width = 26
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Time:'
+    ExplicitTop = 66
   end
   object Label1: TLabel
-    Left = 279
-    Top = 24
+    Left = 223
+    Top = 26
     Width = 28
     Height = 13
     Caption = 'metre'
   end
   object Label2: TLabel
-    Left = 279
-    Top = 64
+    Left = 223
+    Top = 66
     Width = 34
     Height = 13
     Caption = 'second'
   end
+  object Label3: TLabel
+    Left = 285
+    Top = 92
+    Width = 137
+    Height = 13
+    Caption = 'Enter the calculation number'
+  end
   object Calculate: TButton
-    Left = 157
-    Top = 119
-    Width = 141
+    Left = 76
+    Top = 110
+    Width = 191
     Height = 55
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Calculate'
     TabOrder = 0
     OnClick = CalculateClick
-  end
-  object height: TEdit
-    Left = 173
-    Top = 21
-    Width = 100
-    Height = 21
-    Anchors = [akLeft, akBottom]
-    AutoSelect = False
-    TabOrder = 1
-    Text = '10'
+    ExplicitTop = 109
+    ExplicitWidth = 181
   end
   object Time: TMemo
-    Left = 173
-    Top = 61
+    Left = 117
+    Top = 64
     Width = 100
     Height = 21
     Anchors = [akLeft, akBottom]
     Lines.Strings = (
       'Time')
+    TabOrder = 1
+    ExplicitTop = 63
+  end
+  object height: TMemo
+    Left = 117
+    Top = 24
+    Width = 100
+    Height = 21
+    Anchors = [akLeft, akBottom]
+    CharCase = ecLowerCase
+    Lines.Strings = (
+      '10')
     TabOrder = 2
+    WantReturns = False
+    WordWrap = False
+    ExplicitTop = 23
+  end
+  object Edit1: TEdit
+    Left = 285
+    Top = 108
+    Width = 137
+    Height = 21
+    TabOrder = 3
+    Text = '2'
+  end
+  object Button1: TButton
+    Left = 285
+    Top = 135
+    Width = 137
+    Height = 30
+    Caption = 'Enter'
+    TabOrder = 4
+    OnClick = Button1Click
   end
   object MainMenu1: TMainMenu
     Left = 16

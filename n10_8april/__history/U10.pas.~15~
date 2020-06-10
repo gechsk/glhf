@@ -1,3 +1,4 @@
+
 unit U10;
 
 interface
@@ -7,18 +8,22 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
  Procedure Calculation1;
  Procedure openfile;
  Procedure save;
+ type FF= record
+    h:real;
+    t:real;
+ end;
 
 implementation
-{я умирал меня будили, до того как я понял как затолкать процедуру в модуль Delphiiiiii}
+{я умирал меня будили}
  uses Unit1;
-Procedure Calculation1;//входные данные: высота, время
+Procedure Calculation1(h:real;var t:real);//входные данные: высота, время
  Const g=9.8;
- var h,t:real;
  begin
- h:=StrToFloat(read(Form1.height.text));
+ h:=StrToFloat(copy(Form1.height.text,1,(length(Form1.height.Lines[0]))));
  t:=sqrt(2*h/g);
  Form1.Time.text:=FloatToStr(t);
  end;
+
  Procedure openfile;
  var f: TextFile;
 FName,s: string;
@@ -33,6 +38,7 @@ readln(f,s);
 Form1.height.Text:=s;
 closefile(f);
 end;
+
 Procedure save;
  var f: TextFile;
 FName,s : string;
@@ -45,5 +51,9 @@ Rewrite(f);
  Writeln(f,s);
  CloseFile(f);
 end;
+
+
+
+// проверка входных данных
 
 end.

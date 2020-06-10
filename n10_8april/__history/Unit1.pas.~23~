@@ -4,11 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,U10;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,logic,U10;
 
 type
-  TForm1 = class(TForm)
-    Calculate: TButton;
+  TForm1 = class(TForm) //<--Наверное это класс
+    Calculate: TButton;   //<<--а это объекты
     HeightLabel: TLabel;
     TimeLabel: TLabel;
     Time: TMemo;
@@ -24,7 +24,14 @@ type
     SaveReport2: TMenuItem;
     Open2: TMenuItem;
     height: TMemo;
-    procedure CalculateClick(Sender: TObject);
+    procedure CalculateClick(Sender: TObject);//<<---методы(не совсем понял задание)
+
+   { Найти в модуле формы (обычно это Unit1) класс формы (главного окна). Подписать.
+Найти в модуле формы объект (экземпляр) этого класса. Подписать.
+Найти поля этого класса. Подсказка: класс должен содержать компоненты, что вы поместили на форму. Это и есть поля класса формы.
+Найти методы этого класса: их объявления и определения.
+Как в разделе implementation описывается имя метода? Указывается ли там имя класса?}
+
     procedure Close1Click(Sender: TObject);
     procedure Guide1Click(Sender: TObject);
     procedure Save2Click(Sender: TObject);
@@ -36,16 +43,32 @@ type
     { Public declarations }
   end;
 
+
 var
   Form1: TForm1;
+  gege: mas;
+  FName:string;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.CalculateClick(Sender: TObject);
-begin
-  Calculation1;
+procedure TForm1.CalculateClick(Sender: TObject); //<<--Объявление и определение
+{название класса.название процедуры(входные данные)}
+var
+ a:single;
+ begin
+ if(TryStrToFloat(Form1.height.Lines[0],a)=false) then
+ begin
+   ShowMessage('Height entered incorrectly.');
+   exit;
+ end
+ else
+   begin
+    Time.text:=Calculatee(height.Lines[0]);
+    UpdateMas(gege,height.Lines[0],time.Lines[0]);
+   end;
+
 end;
 
 
@@ -68,7 +91,10 @@ end;
 
 procedure TForm1.Save2Click(Sender: TObject);
 begin
-save;
+if Form1.SaveDialog1.Execute then
+FName:= Form1.SaveDialog1.FileName;
+SaveF(FName,gege);
+
 end;
 procedure TForm1.SaveReport2Click(Sender: TObject);
 begin
