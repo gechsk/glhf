@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.688,=C:\Users\Евгений\Desktop\ЧМВ православное\25\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.395,C:\Users\Евгений\Desktop\ЧМВ православное\25\Unit2.pas=C:\Users\Евгений\Desktop\ЧМВ православное\25\U25.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.228,C:\Users\Евгений\Desktop\ЗабГУ\программы\delphihihihi\25\Project1.dproj=C:\Users\Евгений\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.296,C:\Users\Евгений\Desktop\ЗабГУ\программы\delphihihihi\25\Unit1.pas=C:\Users\Евгений\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.228,C:\Users\Евгений\Desktop\ЗабГУ\программы\delphihihihi\25\Project1.dproj=C:\Users\Евгений\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,C:\Users\Евгений\Desktop\ЧМВ\29 april\logic25.pas=C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.688,=C:\Users\Евгений\Desktop\ЧМВ православное\25\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.359,=C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.225,=C:\Users\Евгений\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.005,=C:\Users\Евгений\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.296,C:\Users\Евгений\Desktop\ЗабГУ\программы\delphihihihi\25\Unit1.dfm=C:\Users\Евгений\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>

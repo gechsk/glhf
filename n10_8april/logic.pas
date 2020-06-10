@@ -64,7 +64,6 @@ var Hf:real;
 
      Procedure SaveF(var FName:string;gg:mas );
      var f:TypeFile;
-      i: Integer;
      begin
      AssignFile(f,FName);
      Rewrite(f);
