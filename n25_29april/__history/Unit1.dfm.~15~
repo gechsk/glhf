@@ -4,8 +4,8 @@
   Anchors = [akLeft, akBottom]
   Caption = 'Search for area and perimeter'
   ClientHeight = 506
-  ClientWidth = 430
-  Color = clSilver
+  ClientWidth = 434
+  Color = clGray
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -392,7 +392,6 @@
     Top = 298
     Width = 418
     Height = 201
-    Color = clGray
     DefaultColWidth = 80
     RowCount = 3
     FixedRows = 0

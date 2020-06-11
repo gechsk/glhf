@@ -29,8 +29,8 @@ type
     Open1: TMenuItem;
     Save2: TMenuItem;
     SaveReport2: TMenuItem;
-    TSG: TStringGrid;
     N1: TMenuItem;
+    TSG: TStringGrid;
     procedure СalculateClick(Sender: TObject);
     procedure Clise1Click(Sender: TObject);
     procedure Guide1Click(Sender: TObject);
@@ -47,7 +47,7 @@ type
 
 var
   Form1: TForm1;
-  gege:mas;
+  DataStorege:mas;
   f: TypeFile;
 
 implementation
@@ -61,21 +61,23 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-Form1.BorderStyle := bsSingle;
-Form1.TSG.ColCount:=5;//столбцы(X)
-   Form1.TSG.RowCount:=3;//строки(Y)
-   Form1.TSG.cells[0,1]:='Периметр(P):';
-   Form1.TSG.Cells[0,2]:='Площадь(S):';
-   Form1.TSG.Cells[1,0]:='Результат';
-   Form1.TSG.Cells[2,0]:='Точка A';
-   Form1.TSG.Cells[3,0]:='Точка B';
-   Form1.TSG.Cells[4,0]:='Точка C';
-   Form1.TSG.Cells[2,1]:='X';
-   Form1.TSG.Cells[2,2]:='Y';
-   Form1.TSG.Cells[3,1]:='X';
-   Form1.TSG.Cells[3,2]:='Y';
-   Form1.TSG.Cells[4,1]:='X';
-   Form1.TSG.Cells[4,2]:='Y';
+
+ DataStorege[1].Flag:=true;
+BorderStyle := bsSingle;
+TSG.ColCount:=5;//столбцы(X)
+  TSG.RowCount:=3;//строки(Y)
+   TSG.cells[0,1]:='Периметр(P):';
+   TSG.Cells[0,2]:='Площадь(S):';
+   TSG.Cells[1,0]:='Результат';
+   TSG.Cells[2,0]:='Точка A';
+   TSG.Cells[3,0]:='Точка B';
+   TSG.Cells[4,0]:='Точка C';
+   TSG.Cells[2,1]:='X';
+   TSG.Cells[2,2]:='Y';
+   TSG.Cells[3,1]:='X';
+   TSG.Cells[3,2]:='Y';
+   TSG.Cells[4,1]:='X';
+   TSG.Cells[4,2]:='Y';
 end;
 
 procedure TForm1.Guide1Click(Sender: TObject);
@@ -87,33 +89,14 @@ procedure TForm1.N1Click(Sender: TObject);
 var
 i:integer;
 begin
-i:=StrToInt(inputbox('Choise','enter the calculation number','2'));
-  X1.Lines[0]:=FloatToStr(gege[i].X1);
-  X2.Lines[0]:=FloatToStr(gege[i].X2);
-  X3.Lines[0]:=FloatToStr(gege[i].X3);
-  Y1.Lines[0]:=FloatToStr(gege[i].Y1);
-  Y2.Lines[0]:=FloatToStr(gege[i].Y2);
-  Y3.Lines[0]:=FloatToStr(gege[i].Y3);
- TSG.cells[0,1]:='Периметр(P):';
-   TSG.Cells[0,2]:='Площадь(S):';
-  TSG.Cells[1,0]:='Результат';
-   TSG.Cells[2,0]:='Точка A';
-   TSG.Cells[3,0]:='Точка B';
-   TSG.Cells[4,0]:='Точка C';
-   TSG.Cells[2,1]:='X';
-   TSG.Cells[2,2]:='Y';
-   TSG.Cells[3,1]:='X';
-   TSG.Cells[3,2]:='Y';
-   TSG.Cells[4,1]:='X';
-   TSG.Cells[4,2]:='Y';
-  TSG.Cells[2,1]:=Form1.TSG.Cells[2,1]+':'+FloatToStr(gege[i].X1);
-  TSG.Cells[2,2]:=Form1.TSG.Cells[2,2]+':'+FloatToStr(gege[i].Y1);
-  TSG.Cells[3,1]:=Form1.TSG.Cells[3,1]+':'+FloatToStr(gege[i].X2);
-  TSG.Cells[3,2]:=Form1.TSG.Cells[3,2]+':'+FloatToStr(gege[i].Y2);
-  TSG.Cells[4,1]:=Form1.TSG.Cells[4,1]+':'+FloatToStr(gege[i].X3);
-  TSG.Cells[4,2]:=Form1.TSG.Cells[4,2]+':'+FloatToStr(gege[i].Y3);
-  Form1.TSG.Cells[1,1]:=FormatFloat('#####.###',gege[i].P);//ограничение количества знаков после запятой
-  Form1.TSG.Cells[1,2]:=FormatFloat('#####.###',gege[i].S);
+i:=StrToInt(inputbox('Choise','enter the calculation number','2'))+1;
+  X1.Lines[0]:=FloatToStr(DataStorege[i].X1);
+  X2.Lines[0]:=FloatToStr(DataStorege[i].X2);
+  X3.Lines[0]:=FloatToStr(DataStorege[i].X3);
+  Y1.Lines[0]:=FloatToStr(DataStorege[i].Y1);
+  Y2.Lines[0]:=FloatToStr(DataStorege[i].Y2);
+  Y3.Lines[0]:=FloatToStr(DataStorege[i].Y3);
+
 end;
 
 procedure TForm1.Open1Click(Sender: TObject);
@@ -124,8 +107,9 @@ begin
 if Form1.opendialog2.Execute then
 begin
 FName:= Form1.OpenDialog2.FileName;
-OpenF(FName,gege);
+OpenF(FName,DataStorege);
 end;
+
 end;
 procedure TForm1.Save2Click(Sender: TObject);
 var
@@ -134,75 +118,106 @@ begin
 if Form1.SaveDialog1.Execute then
 begin
 FName:= Form1.SaveDialog1.FileName;
-SaveF(FName,gege);
+SaveF(FName,DataStorege);
 end;
 end;
 
 procedure TForm1.SaveReport2Click(Sender: TObject);
 begin
-SaveReport;
+Form1.TSG.cols[1].SaveToFile('ReportFilesss.txt');
 end;
+
+
 
 
 
 procedure TForm1.СalculateClick(Sender: TObject);
-var i:integer;
+var i,c:integer;
+P,S:real;
 a:single;
 begin
 if (TryStrToFloat(X1.lines[0],a)=false) then
 begin
+  X1.Color:=clred;
   ShowMessage('Oh, you entered X1 wrong);');
   exit;
-end;
+end
+else
+X1.Color:=clwhite;
+
+
 
 if (TryStrToFloat(X2.lines[0],a)=false) then
 begin
+  X2.Color:=clred;
   ShowMessage('Oh, you entered X2 wrong);');
   exit;
-end;
+end
+else
+X2.Color:=clwhite;
+
+
 if (TryStrToFloat(X3.lines[0],a)=false) then
 begin
+  X3.Color:=clred;
   ShowMessage('Oh, you entered X3 wrong);');
   exit;
-end;
+end
+else
+X3.Color:=clwhite;
+
+
 if (TryStrToFloat(Y1.lines[0],a)=false) then
 begin
+  Y1.Color:=clred;
   ShowMessage('Oh, you entered Y1 wrong);');
   exit;
-end;
+end
+else
+Y1.Color:=clwhite;
+
+
 if (TryStrToFloat(Y2.lines[0],a)=false) then
 begin
+  Y2.Color:=clred;
   ShowMessage('Oh, you entered Y2 wrong);');
   exit;
-end;
+end
+else
+Y2.Color:=clwhite;
+
+
+
 if (TryStrToFloat(Y3.lines[0],a)=false) then
 begin
+  Y3.Color:=clred;
   ShowMessage('Oh, you entered Y3 wrong);');
   exit;
-end;
- Calculate(gege, X1.Lines[0],X2.Lines[0],X3.Lines[0],Y1.Lines[0],Y2.Lines[0],Y3.Lines[0]);
- i:= search(gege)-1;
-  TSG.cells[0,1]:='Периметр(P):';
-   TSG.Cells[0,2]:='Площадь(S):';
-  TSG.Cells[1,0]:='Результат';
+end
+else
+Y3.Color:=clwhite;
+
+TSG.Cells[1,0]:='Результат';
    TSG.Cells[2,0]:='Точка A';
    TSG.Cells[3,0]:='Точка B';
    TSG.Cells[4,0]:='Точка C';
-   TSG.Cells[2,1]:='X';
-   TSG.Cells[2,2]:='Y';
-   TSG.Cells[3,1]:='X';
-   TSG.Cells[3,2]:='Y';
-   TSG.Cells[4,1]:='X';
-   TSG.Cells[4,2]:='Y';
-  TSG.Cells[2,1]:=Form1.TSG.Cells[2,1]+':'+FloatToStr(gege[i].X1);
-  TSG.Cells[2,2]:=Form1.TSG.Cells[2,2]+':'+FloatToStr(gege[i].Y1);
-  TSG.Cells[3,1]:=Form1.TSG.Cells[3,1]+':'+FloatToStr(gege[i].X2);
-  TSG.Cells[3,2]:=Form1.TSG.Cells[3,2]+':'+FloatToStr(gege[i].Y2);
-  TSG.Cells[4,1]:=Form1.TSG.Cells[4,1]+':'+FloatToStr(gege[i].X3);
-  TSG.Cells[4,2]:=Form1.TSG.Cells[4,2]+':'+FloatToStr(gege[i].Y3);
-  Form1.TSG.Cells[1,1]:=FormatFloat('#####.###',gege[i].P);//ограничение количества знаков после запятой
-  Form1.TSG.Cells[1,2]:=FormatFloat('#####.###',gege[i].S);
+   c:= (search(DataStorege))*2;
+ Calculate(DataStorege, StrToFloat(X1.Lines[0]),StrToFloat(X2.Lines[0]),StrToFloat(X3.Lines[0]),StrToFloat(Y1.Lines[0]),StrToFloat(Y2.Lines[0]),StrToFloat(Y3.Lines[0]),P,S);
+         i:= search(DataStorege);
+
+
+   if (i*2>=TSG.RowCount) then
+   TSG.RowCount:=TSG.RowCount+2;
+  TSG.cells[0,c-1]:='Периметр(P'+IntToStr(i-1)+'):';
+   TSG.Cells[0,c]:='Площадь(P'+IntToStr(i-1)+'):';
+   TSG.Cells[2,c-1]:='X:'+FloatToStr(DataStorege[i].X1);
+  TSG.Cells[2,c]:='Y:'+FloatToStr(DataStorege[i].Y1);
+  TSG.Cells[3,c-1]:='X:'+FloatToStr(DataStorege[i].X2);
+  TSG.Cells[3,c]:='Y:'+FloatToStr(DataStorege[i].Y2);
+  TSG.Cells[4,c-1]:='X:'+FloatToStr(DataStorege[i].X3);
+  TSG.Cells[4,c]:='Y:'+FloatToStr(DataStorege[i].Y3);
+  Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',P);//ограничение количества знаков после запятой
+  Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',S);
 
 end;
-
 end.

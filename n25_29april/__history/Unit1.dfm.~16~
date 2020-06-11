@@ -3,9 +3,9 @@
   Top = 0
   Anchors = [akLeft, akBottom]
   Caption = 'Search for area and perimeter'
-  ClientHeight = 388
-  ClientWidth = 435
-  Color = clBtnFace
+  ClientHeight = 506
+  ClientWidth = 433
+  Color = clGray
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -390,8 +390,8 @@
   object TSG: TStringGrid
     Left = 8
     Top = 298
-    Width = 417
-    Height = 82
+    Width = 418
+    Height = 201
     DefaultColWidth = 80
     RowCount = 3
     FixedRows = 0

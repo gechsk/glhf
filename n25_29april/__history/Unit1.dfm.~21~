@@ -5,7 +5,7 @@
   Caption = 'Search for area and perimeter'
   ClientHeight = 506
   ClientWidth = 430
-  Color = clSilver
+  Color = clGray
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

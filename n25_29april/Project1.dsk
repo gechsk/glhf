@@ -1,13 +1,13 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\U25.pas',0,1,1,65,112,0,0,,
-File_1=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\n10_8april\logic.pas',0,1,28,20,53,0,0,,
-File_2=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\Logic.pas',0,1,171,3,226,0,0,,
-File_3=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\10\Unit1.pas',0,1,1,1,1,0,0,,
-File_4=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UClientBanck.pas',0,1,304,64,328,0,0,,
-File_5=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF4ZapBD.pas',0,1,69,52,108,0,0,,
-File_6=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF2ZapBD.pas',0,1,51,56,75,0,0,,
-File_7=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.dfm',0,1,1,1,1,0,0,,
-File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\20.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,20417,1,20430,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\20.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,18977,42,18993,0,0,,
+File_1=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\U25.pas',0,1,1,65,112,0,0,,
+File_2=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\n10_8april\logic.pas',0,1,28,20,53,0,0,,
+File_3=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\Logic.pas',0,1,171,3,226,0,0,,
+File_4=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\10\Unit1.pas',0,1,1,1,1,0,0,,
+File_5=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UClientBanck.pas',0,1,304,64,328,0,0,,
+File_6=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF4ZapBD.pas',0,1,69,52,108,0,0,,
+File_7=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF2ZapBD.pas',0,1,51,56,75,0,0,,
+File_8=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.dfm',0,1,1,1,1,0,0,,
 File_9=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF3ZapBD.pas',0,1,1,1,1,0,0,,
 File_10=TSourceModule,'C:\Users\Евгений\Desktop\PClienBanck.exe',0,1,1,1,1,0,0,,
 File_11=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_ZapForm.pas',0,1,52,27,55,0,0,,
@@ -16,20 +16,20 @@ File_13=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\к�
 File_14=TSourceModule,'c:\program files (x86)\embarcadero\studio\20.0\SOURCE\RTL\SYS\System.pas',0,1,55,1,12,0,0,,
 
 [Modules]
-Module0=C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas
-Module1=C:\Users\Евгений\Desktop\ЧМВ\29 april\logic25.pas
+Module0=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\Unit1.pas
+Module1=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\logic25.pas
 Count=2
 EditWindowCount=1
 
-[C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas]
+[C:\Users\Евгений\Desktop\ЧМВ\n25_29april\Unit1.pas]
 ModuleType=TSourceModule
 
-[C:\Users\Евгений\Desktop\ЧМВ\29 april\logic25.pas]
+[C:\Users\Евгений\Desktop\ЧМВ\n25_29april\logic25.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
 ViewCount=2
-CurrentEditView=C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas
+CurrentEditView=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\Unit1.pas
 View0=0
 View1=1
 PercentageSizes=1
@@ -48,40 +48,40 @@ ClientHeight=8626
 DockedToMainForm=1
 BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
-LeftPanelSize=886
+LeftPanelSize=2020
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=00000800010100000000190E0000000000000176030000000000000100000000580E000009000000446F636B53697465330100000000131900001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=00000800010100000000F51100000000000001E4070000000000000100000000580E000009000000446F636B53697465330100000000F11F00001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=1003
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=00000800010100000000190E00000000000001EB0300000000000001000000004212000009000000446F636B536974653201000000001319000009000000446F636B5369746534FFFFFFFF
-BottomPanelSize=1654
+RightPanelData=00000800010100000000F51100000000000001EB0300000000000001000000004212000009000000446F636B53697465320100000000F11F000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=0
 BottomPanelClients=DockSite1,MessageView
-BottomPanelData=0000080001020100000009000000446F636B5369746531AA440000000000000276060000000000000100000000AA4400000F0000004D65737361676556696577466F726DFFFFFFFF
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726DAA440000000000000276060000000000000100000000AA4400000F0000004D65737361676556696577466F726DFFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779A1D00000000000002F806000000000000FFFFFFFF
 
 [View0]
 CustomEditViewType=TEditView
-Module=C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas
-CursorX=5
-CursorY=127
-TopLine=118
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas
-
-[View1]
-CustomEditViewType=TEditView
-Module=C:\Users\Евгений\Desktop\ЧМВ\29 april\logic25.pas
-CursorX=35
-CursorY=19
+Module=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\logic25.pas
+CursorX=56
+CursorY=42
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\Евгений\Desktop\ЧМВ\29 april\logic25.pas
+EditViewName=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\logic25.pas
+
+[View1]
+CustomEditViewType=TEditView
+Module=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\Unit1.pas
+CursorX=52
+CursorY=220
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\Евгений\Desktop\ЧМВ\n25_29april\Unit1.pas
 
 [UndockedDesigner]
 Count=0
@@ -161,7 +161,7 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
@@ -186,11 +186,11 @@ State=0
 Left=0
 Top=0
 Width=1003
-Height=1456
+Height=3310
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1003
-ClientHeight=1456
+ClientHeight=3310
 TBDockHeight=7157
 LRDockWidth=1999
 Dockable=1
@@ -223,17 +223,22 @@ Docked=1
 State=0
 Left=0
 Top=310
-Width=886
-Height=2514
+Width=2020
+Height=4368
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=886
-ClientHeight=2514
+ClientWidth=2020
+ClientHeight=4368
 TBDockHeight=5192
-LRDockWidth=886
+LRDockWidth=2020
 Dockable=1
 StayOnTop=0
-SplitPos=61
+SplitPos=135
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Color,
+ExpandedItems=BorderIcons=0,Constraints=0,Anchors=0,BevelEdges=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -484,8 +489,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-296
-Top=-363
+Left=-270
+Top=-337
 Width=1845
 Height=3146
 MaxLeft=-1
@@ -569,11 +574,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1896
+Width=2020
 Height=3379
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1896
+ClientWidth=2020
 ClientHeight=3379
 TBDockHeight=3681
 LRDockWidth=1896
@@ -703,14 +708,14 @@ Docked=1
 State=0
 Left=0
 Top=28
-Width=886
+Width=2020
 Height=3379
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=886
+ClientWidth=2020
 ClientHeight=3379
 TBDockHeight=3558
-LRDockWidth=886
+LRDockWidth=2020
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -728,11 +733,11 @@ State=0
 Left=0
 Top=387
 Width=1003
-Height=1456
+Height=3310
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1003
-ClientHeight=1456
+ClientHeight=3310
 TBDockHeight=4148
 LRDockWidth=1003
 Dockable=1
