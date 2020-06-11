@@ -136,37 +136,16 @@ var i,c:integer;
 P,S:real;
 a:single;
 begin
-if (TryStrToFloat(X1.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X1 wrong);');
-  exit;
-end;
+CheckChicken (X1);
+CheckChicken (X2);
+CheckChicken (X3);
+CheckChicken (Y1);
+CheckChicken (Y2);
+CheckChicken (Y3);
 
-if (TryStrToFloat(X2.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X2 wrong);');
-  exit;
-end;
-if (TryStrToFloat(X3.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X3 wrong);');
-  exit;
-end;
-if (TryStrToFloat(Y1.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered Y1 wrong);');
-  exit;
-end;
-if (TryStrToFloat(Y2.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered Y2 wrong);');
-  exit;
-end;
-if (TryStrToFloat(Y3.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered Y3 wrong);');
-  exit;
-end;
+
+
+
 TSG.Cells[1,0]:='Результат';
    TSG.Cells[2,0]:='Точка A';
    TSG.Cells[3,0]:='Точка B';
@@ -188,8 +167,6 @@ TSG.Cells[1,0]:='Результат';
   TSG.Cells[4,c]:='Y:'+FloatToStr(DataStorege[i].Y3);
   Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',P);//ограничение количества знаков после запятой
   Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',S);
-   TSG.Color[1,2]:=(clred);
-
 
 end;
 end.

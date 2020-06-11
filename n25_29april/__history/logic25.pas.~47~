@@ -13,9 +13,10 @@ type ff= record
 
    TypeFile = file of mas;
  function search(u:mas):byte;//поиск последнего элемента в массиве
- Procedure Calculate(var ms: mas; X1,X2,X3,Y1,Y2,Y3,P,S:real);// -_-
+ Procedure Calculate(var ms: mas; X1,X2,X3,Y1,Y2,Y3:real ;var P,S:real);// -_-
  Procedure SaveF(Fn:string;mas:mas);
  procedure OpenF(FName:string;var mas:mas);
+ Procedure CheckChicken(var Memo:Tmemo);
 implementation
 uses Unit1;
 
@@ -39,7 +40,7 @@ function search(u:mas):byte;//поиск последнего элемента в массиве
       search:=i;
   end;
 
-Procedure Calculate(var ms: mas; X1,X2,X3,Y1,Y2,Y3,P,S:real);// -_-
+Procedure Calculate(var ms: mas; X1,X2,X3,Y1,Y2,Y3:real; var P,S:real);// -_-
 var i:integer;
 Per,AB,AC,BC:real;
 begin
@@ -80,6 +81,23 @@ AssignFile (f,FName);
 Reset (f);
 Read(f,mas);
 CloseFile(f);
+end;
+
+
+
+Procedure CheckChicken(var Memo:Tmemo;);
+var i,c:integer;
+P,S:real;
+a:single;
+begin
+if (TryStrToFloat(memo.lines[0],a)=false) then
+begin
+  memo.Color:=clred;
+  ShowMessage('Oh, you entered the data incorrectly);');
+  break;
+end
+else
+memo.Color:=clwhite;
 end;
 
 

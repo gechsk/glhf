@@ -63,21 +63,21 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
 
  DataStorege[1].Flag:=true;
-Form1.BorderStyle := bsSingle;
-Form1.TSG.ColCount:=5;//столбцы(X)
-   Form1.TSG.RowCount:=3;//строки(Y)
-   Form1.TSG.cells[0,1]:='Периметр(P):';
-   Form1.TSG.Cells[0,2]:='Площадь(S):';
-   Form1.TSG.Cells[1,0]:='Результат';
-   Form1.TSG.Cells[2,0]:='Точка A';
-   Form1.TSG.Cells[3,0]:='Точка B';
-   Form1.TSG.Cells[4,0]:='Точка C';
-   Form1.TSG.Cells[2,1]:='X';
-   Form1.TSG.Cells[2,2]:='Y';
-   Form1.TSG.Cells[3,1]:='X';
-   Form1.TSG.Cells[3,2]:='Y';
-   Form1.TSG.Cells[4,1]:='X';
-   Form1.TSG.Cells[4,2]:='Y';
+BorderStyle := bsSingle;
+TSG.ColCount:=5;//столбцы(X)
+  TSG.RowCount:=3;//строки(Y)
+   TSG.cells[0,1]:='Периметр(P):';
+   TSG.Cells[0,2]:='Площадь(S):';
+   TSG.Cells[1,0]:='Результат';
+   TSG.Cells[2,0]:='Точка A';
+   TSG.Cells[3,0]:='Точка B';
+   TSG.Cells[4,0]:='Точка C';
+   TSG.Cells[2,1]:='X';
+   TSG.Cells[2,2]:='Y';
+   TSG.Cells[3,1]:='X';
+   TSG.Cells[3,2]:='Y';
+   TSG.Cells[4,1]:='X';
+   TSG.Cells[4,2]:='Y';
 end;
 
 procedure TForm1.Guide1Click(Sender: TObject);
@@ -136,37 +136,60 @@ var i,c:integer;
 P,S:real;
 a:single;
 begin
-if (TryStrToFloat(X1.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X1 wrong);');
-  exit;
-end;
+CheckChicken (X1);
+
+
 
 if (TryStrToFloat(X2.lines[0],a)=false) then
 begin
+  X2.Color:=clred;
   ShowMessage('Oh, you entered X2 wrong);');
   exit;
-end;
+end
+else
+X2.Color:=clwhite;
+
+
 if (TryStrToFloat(X3.lines[0],a)=false) then
 begin
+  X3.Color:=clred;
   ShowMessage('Oh, you entered X3 wrong);');
   exit;
-end;
+end
+else
+X3.Color:=clwhite;
+
+
 if (TryStrToFloat(Y1.lines[0],a)=false) then
 begin
+  Y1.Color:=clred;
   ShowMessage('Oh, you entered Y1 wrong);');
   exit;
-end;
+end
+else
+Y1.Color:=clwhite;
+
+
 if (TryStrToFloat(Y2.lines[0],a)=false) then
 begin
+  Y2.Color:=clred;
   ShowMessage('Oh, you entered Y2 wrong);');
   exit;
-end;
+end
+else
+Y2.Color:=clwhite;
+
+
+
 if (TryStrToFloat(Y3.lines[0],a)=false) then
 begin
+  Y3.Color:=clred;
   ShowMessage('Oh, you entered Y3 wrong);');
   exit;
-end;
+end
+else
+Y3.Color:=clwhite;
+
 TSG.Cells[1,0]:='Результат';
    TSG.Cells[2,0]:='Точка A';
    TSG.Cells[3,0]:='Точка B';
@@ -189,9 +212,5 @@ TSG.Cells[1,0]:='Результат';
   Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',P);//ограничение количества знаков после запятой
   Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',S);
 
-  TSG.Color:= clRed;
-
-
 end;
-
 end.

@@ -136,67 +136,14 @@ var i,c:integer;
 P,S:real;
 a:single;
 begin
-if (TryStrToFloat(X1.lines[0],a)=false) then
-begin
-  X1.Color:=clred;
-  ShowMessage('Oh, you entered X1 wrong);');
-  exit;
-end
-else
-X1.Color:=clwhite;
+
+if CheckChicken (X1) and CheckChicken (X2) and CheckChicken (X3) and CheckChicken (Y1) and CheckChicken (Y2) and CheckChicken (Y3)=true then
 
 
 
-if (TryStrToFloat(X2.lines[0],a)=false) then
-begin
-  X2.Color:=clred;
-  ShowMessage('Oh, you entered X2 wrong);');
-  exit;
-end
-else
-X2.Color:=clwhite;
 
 
-if (TryStrToFloat(X3.lines[0],a)=false) then
-begin
-  X3.Color:=clred;
-  ShowMessage('Oh, you entered X3 wrong);');
-  exit;
-end
-else
-X3.Color:=clwhite;
-
-
-if (TryStrToFloat(Y1.lines[0],a)=false) then
-begin
-  Y1.Color:=clred;
-  ShowMessage('Oh, you entered Y1 wrong);');
-  exit;
-end
-else
-Y1.Color:=clwhite;
-
-
-if (TryStrToFloat(Y2.lines[0],a)=false) then
-begin
-  Y2.Color:=clred;
-  ShowMessage('Oh, you entered Y2 wrong);');
-  exit;
-end
-else
-Y2.Color:=clwhite;
-
-
-
-if (TryStrToFloat(Y3.lines[0],a)=false) then
-begin
-  Y3.Color:=clred;
-  ShowMessage('Oh, you entered Y3 wrong);');
-  exit;
-end
-else
-Y3.Color:=clwhite;
-
+ begin
 TSG.Cells[1,0]:='Результат';
    TSG.Cells[2,0]:='Точка A';
    TSG.Cells[3,0]:='Точка B';
@@ -219,5 +166,8 @@ TSG.Cells[1,0]:='Результат';
   Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',P);//ограничение количества знаков после запятой
   Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',S);
 
+end
+else
+exit;
 end;
 end.
