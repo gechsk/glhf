@@ -7,40 +7,32 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,logic;
 
 type
-  TForm1 = class(TForm) //<--Наверное это класс
-    Calculate: TButton;   //<<--а это объекты
+  TForm1 = class(TForm)
+    Calculate: TButton;
     HeightLabel: TLabel;
-    TimeLabel: TLabel;
-    Time: TMemo;
     MainMenu1: TMainMenu;
     Close1: TMenuItem;
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     Guide1: TMenuItem;
     Label1: TLabel;
-    Label2: TLabel;
     N1: TMenuItem;
     Save2: TMenuItem;
     SaveReport2: TMenuItem;
     Open2: TMenuItem;
     height: TMemo;
     Label3: TLabel;
-    Edit1: TEdit;
     Button1: TButton;
-    procedure CalculateClick(Sender: TObject);//<<---методы(не совсем понял задание)
-
-   { Найти в модуле формы (обычно это Unit1) класс формы (главного окна). Подписать.
-Найти в модуле формы объект (экземпляр) этого класса. Подписать.
-Найти поля этого класса. Подсказка: класс должен содержать компоненты, что вы поместили на форму. Это и есть поля класса формы.
-Найти методы этого класса: их объявления и определения.
-Как в разделе implementation описывается имя метода? Указывается ли там имя класса?}
-
+    Time: TMemo;
+    Number: TMemo;
+    procedure CalculateClick(Sender: TObject);
     procedure Close1Click(Sender: TObject);
     procedure Guide1Click(Sender: TObject);
     procedure Save2Click(Sender: TObject);
     procedure SaveReport2Click(Sender: TObject);
     procedure Open2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,8 +42,9 @@ type
 
 var
   Form1: TForm1;
-  gege: mas;
+  DataPoint: mas;
   FName:string;
+
 
 implementation
 
@@ -61,34 +54,28 @@ implementation
  var
  a:single;
  begin
- if(TryStrToFloat(Edit1.text,a)=false) then
+ if CheckChicken(number)=true then
  begin
-   ShowMessage('Number entered incorrectly.');
-   exit;
+  height.lines[0]:=WriteNumber(number.Lines[0],DataPoint);
  end
  else
- begin
-  height.Lines[0]:=WriteNumber(Edit1.Text,gege);
-  time.Lines[0]:=WriteNumber2(Edit1.Text,gege);
-
- end;
+ exit;
  end;
 
-procedure TForm1.CalculateClick(Sender: TObject); //<<--Объявление и определение
-{название класса.название процедуры(входные данные)}
+procedure TForm1.CalculateClick(Sender: TObject);
 var
- a:single;
+ s,TM:real;
  begin
- if(TryStrToFloat(Form1.height.Lines[0],a)=false) then
- begin
-   ShowMessage('Height entered incorrectly.');
-   exit;
- end
- else
+ if CheckChicken(height)=true then
    begin
-    Time.text:=Calculatee(height.Lines[0]);
-    UpdateMas(gege,height.Lines[0],time.Lines[0]);
-   end;
+   s:=StrToFloat(height.Lines[0]);
+    TM:=CalculateTime(s);
+
+     WriteReport(Time, Height.Lines[0], TM);
+   end
+   else
+   exit;
+
 
 end;
 
@@ -96,6 +83,11 @@ end;
 procedure TForm1.Close1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+Point:=0;
 end;
 
 procedure TForm1.Guide1Click(Sender: TObject);
@@ -113,14 +105,16 @@ FName:= Form1.OpenDialog1.FileName;
 AssignFile (f,FName);
 reset(f);
 end;
-read(f,gege);
+read(f,DataPoint);
+CloseFile(f);
+Point:=(search(DataPoint));
 end;
 
 procedure TForm1.Save2Click(Sender: TObject);
 begin
 if Form1.SaveDialog1.Execute then
 FName:= Form1.SaveDialog1.FileName;
-SaveF(FName,gege);
+SaveF(FName,DataPoint);
 end;
 procedure TForm1.SaveReport2Click(Sender: TObject);
 begin

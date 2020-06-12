@@ -4,21 +4,18 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,logic,U10;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,logic;
 
 type
   TForm1 = class(TForm) //<--Наверное это класс
     Calculate: TButton;   //<<--а это объекты
     HeightLabel: TLabel;
-    TimeLabel: TLabel;
-    Time: TMemo;
     MainMenu1: TMainMenu;
     Close1: TMenuItem;
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     Guide1: TMenuItem;
     Label1: TLabel;
-    Label2: TLabel;
     N1: TMenuItem;
     Save2: TMenuItem;
     SaveReport2: TMenuItem;
@@ -27,6 +24,7 @@ type
     Label3: TLabel;
     Edit1: TEdit;
     Button1: TButton;
+    Time: TMemo;
     procedure CalculateClick(Sender: TObject);//<<---методы(не совсем понял задание)
 
    { Найти в модуле формы (обычно это Unit1) класс формы (главного окна). Подписать.
@@ -63,19 +61,20 @@ implementation
  begin
  if(TryStrToFloat(Edit1.text,a)=false) then
  begin
-   ShowMessage('Height entered incorrectly.');
+   ShowMessage('Number entered incorrectly.');
    exit;
  end
  else
  begin
-  height:=WriteNumber(Edit1.Text,gege);
+  height.Lines[0]:=WriteNumber(Edit1.Text,gege);
+
  end;
  end;
 
-procedure TForm1.CalculateClick(Sender: TObject); //<<--Объявление и определение
-{название класса.название процедуры(входные данные)}
+procedure TForm1.CalculateClick(Sender: TObject);
 var
  a:single;
+ s,TM:real;
  begin
  if(TryStrToFloat(Form1.height.Lines[0],a)=false) then
  begin
@@ -84,8 +83,10 @@ var
  end
  else
    begin
-    Time.text:=Calculatee(height.Lines[0]);
-    UpdateMas(gege,height.Lines[0],time.Lines[0]);
+   s:=StrToFloat(height.Lines[0]);
+    TM:=CalculateTime(s);
+
+     WriteReport(Time, Height.Lines[0], TM);
    end;
 
 end;

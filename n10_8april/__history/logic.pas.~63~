@@ -6,31 +6,30 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
 
 
   type ff= record
-    HH :real;//входные данные
-    TT :real; // резудьтат
+    Height :real;//входные данные
   end;
 
   mas = array [1..128] of ff;
 
    TypeFile = file of mas;
 
-    function Calculatee(H:string):string;
-    function search(u:mas):byte;//поиск первого последнего элемента в массиве
-    procedure UpdateMas (var gg: mas;H:string;T:string);//добавляет новые данные в запись
+    Function CalculateTime(H:Real):Real;
+    function search(u:mas):byte;//поиск последнего элемента в массиве
+    procedure UpdateMas (var gg: mas;H:Real);//добавляет новые данные в запись
     Procedure SaveF(var FName:string;gg:mas );
     Function WriteNumber(n:string;m:mas):string;
+    procedure WriteReport(Var Result:Tmemo; Height:string; Time:real) ;
 implementation
 
 uses Unit1;
 
 
-function Calculatee(H:string):string;
+Function CalculateTime(H:Real): Real;
 const
 G=9.8;
-var Hf:real;
   begin
-   Hf:=StrToFloat(H);
-   Calculatee:=FloatToStr(sqrt(2*Hf/G));
+   CalculateTime:=sqrt(2*H/G);
+   UpdateMas(gege,H);
   end;
 
 
@@ -42,7 +41,7 @@ var Hf:real;
   i:=1;
      flag:=false;
     while flag=false  do
-      if (u[i].HH>0) then
+      if (u[i].Height>0) then
       inc(i)
       else
       begin
@@ -51,19 +50,17 @@ var Hf:real;
       search:=i;
   end;
 
-  procedure UpdateMas (var gg: mas;H:string;T:string);//добавляет новые данные в запись
+  procedure UpdateMas (var gg: mas;H:Real);//добавляет новые данные в запись
   var i:integer;
      begin
        i:=search(gg);
-      gg[i].HH:=StrToFloat(H);
-      gg[i].TT:=StrToFloat(T);
+      gg[i].Height:=H;
 
      end;
 
 
      Procedure SaveF(var FName:string;gg:mas );
      var f:TypeFile;
-      i: Integer;
      begin
      AssignFile(f,FName);
      Rewrite(f);
@@ -76,14 +73,24 @@ var Hf:real;
       nf:integer;
      begin
       nf:=StrToInt(n);
-      WriteNumber:=FloatToStr(m[nf].HH);
+      WriteNumber:=FloatToStr(m[nf].Height);
      end;
 
-     Function WriteNumber2(n:string;m:mas):string;
-      var
-      nf:integer;
-       begin
-        nf:=StrToInt(n);
-        WriteNumber2:=FloatToStr(m[nf].TT);
-       end;
-end.
+     procedure WriteReport(Var Result:Tmemo; Height:string; Time:real) ;
+     var c: integer;
+     begin
+     c:=1;
+           while (result.Lines[c]<>'') do
+            inc(c);
+
+            result.Lines[c]:='Height='+Height;
+             result.Lines[c+1]:='Time='+FloatToStr(Time)+'(second)';
+              result.Lines[c+2]:='____________________________';
+
+
+
+     end;
+
+      end.
+
+

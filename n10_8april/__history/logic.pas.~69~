@@ -30,7 +30,7 @@ const
 G=9.8;
   begin
    CalculateTime:=sqrt(2*H/G);
-   UpdateMas(DataPoint,H);
+   UpdateMas(gege,H);
   end;
 
 

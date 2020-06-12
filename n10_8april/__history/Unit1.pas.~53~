@@ -4,14 +4,13 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,logic,U10;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,logic;
 
 type
   TForm1 = class(TForm) //<--Наверное это класс
     Calculate: TButton;   //<<--а это объекты
     HeightLabel: TLabel;
     TimeLabel: TLabel;
-    Time: TMemo;
     MainMenu1: TMainMenu;
     Close1: TMenuItem;
     OpenDialog1: TOpenDialog;
@@ -24,6 +23,10 @@ type
     SaveReport2: TMenuItem;
     Open2: TMenuItem;
     height: TMemo;
+    Label3: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Time: TMemo;
     procedure CalculateClick(Sender: TObject);//<<---методы(не совсем понял задание)
 
    { Найти в модуле формы (обычно это Unit1) класс формы (главного окна). Подписать.
@@ -37,6 +40,7 @@ type
     procedure Save2Click(Sender: TObject);
     procedure SaveReport2Click(Sender: TObject);
     procedure Open2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,10 +57,27 @@ implementation
 
 {$R *.dfm}
 
+ procedure TForm1.Button1Click(Sender: TObject);
+ var
+ a:single;
+ begin
+ if(TryStrToFloat(Edit1.text,a)=false) then
+ begin
+   ShowMessage('Number entered incorrectly.');
+   exit;
+ end
+ else
+ begin
+  height.Lines[0]:=WriteNumber(Edit1.Text,gege);
+
+ end;
+ end;
+
 procedure TForm1.CalculateClick(Sender: TObject); //<<--Объявление и определение
 {название класса.название процедуры(входные данные)}
 var
  a:single;
+ s,TM:real;
  begin
  if(TryStrToFloat(Form1.height.Lines[0],a)=false) then
  begin
@@ -65,8 +86,9 @@ var
  end
  else
    begin
-    Time.text:=Calculatee(height.Lines[0]);
-    UpdateMas(gege,height.Lines[0],time.Lines[0]);
+   s:=StrToFloat(height.Lines[0]);
+    TM:=CalculateTime(s);
+     WriteReport(Time, Height.Lines[0], TM);
    end;
 
 end;

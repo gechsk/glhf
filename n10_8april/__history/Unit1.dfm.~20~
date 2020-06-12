@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Calculating the time when a stone falls'
-  ClientHeight = 188
-  ClientWidth = 430
+  ClientHeight = 316
+  ClientWidth = 712
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,12 +13,12 @@ object Form1: TForm1
   Menu = MainMenu1
   OldCreateOrder = False
   DesignSize = (
-    430
-    188)
+    712
+    316)
   PixelsPerInch = 96
   TextHeight = 13
   object HeightLabel: TLabel
-    Left = 132
+    Left = 76
     Top = 26
     Width = 35
     Height = 13
@@ -26,7 +26,7 @@ object Form1: TForm1
     Caption = 'Height:'
   end
   object TimeLabel: TLabel
-    Left = 141
+    Left = 85
     Top = 66
     Width = 26
     Height = 13
@@ -34,49 +34,77 @@ object Form1: TForm1
     Caption = 'Time:'
   end
   object Label1: TLabel
-    Left = 279
+    Left = 223
     Top = 26
     Width = 28
     Height = 13
     Caption = 'metre'
   end
   object Label2: TLabel
-    Left = 279
+    Left = 223
     Top = 66
     Width = 34
     Height = 13
     Caption = 'second'
   end
+  object Label3: TLabel
+    Left = 311
+    Top = 116
+    Width = 137
+    Height = 13
+    Caption = 'Enter the calculation number'
+  end
   object Calculate: TButton
-    Left = 132
-    Top = 109
-    Width = 181
+    Left = 76
+    Top = 237
+    Width = 463
     Height = 55
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Calculate'
     TabOrder = 0
     OnClick = CalculateClick
+    ExplicitTop = 110
+    ExplicitWidth = 191
   end
   object Time: TMemo
-    Left = 173
-    Top = 63
-    Width = 100
-    Height = 21
+    Left = 85
+    Top = 85
+    Width = 172
+    Height = 132
     Anchors = [akLeft, akBottom]
     Lines.Strings = (
       'Time')
     TabOrder = 1
   end
   object height: TMemo
-    Left = 173
+    Left = 117
     Top = 23
     Width = 100
     Height = 21
     Anchors = [akLeft, akBottom]
+    CharCase = ecLowerCase
     Lines.Strings = (
       '10')
     TabOrder = 2
     WantReturns = False
+    WordWrap = False
+  end
+  object Edit1: TEdit
+    Left = 285
+    Top = 40
+    Width = 28
+    Height = 30
+    TabOrder = 3
+    Text = '2'
+  end
+  object Button1: TButton
+    Left = 319
+    Top = 40
+    Width = 137
+    Height = 30
+    Caption = 'Enter'
+    TabOrder = 4
+    OnClick = Button1Click
   end
   object MainMenu1: TMainMenu
     Left = 16

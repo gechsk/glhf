@@ -4,12 +4,12 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage;
-type ff= record
+type Data = record
     X1,X2,X3,Y1,Y2,Y3: real;//входные данные
     Flag:boolean;
   end;
 
-  mas = array [1..128] of ff;
+  mas = array [1..128] of Data;
 
    TypeFile = file of mas;
  function search(u:mas):byte;//поиск последнего элемента в массиве

@@ -5,14 +5,13 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus;
 
 
-  type Data = record
+  type ff= record
     Height :real;//входные данные
   end;
 
-  mas = array [1..128] of Data;
+  mas = array [1..128] of ff;
 
    TypeFile = file of mas;
-   var Point:integer;
 
     Function CalculateTime(H:Real):Real;
     function search(u:mas):byte;//поиск последнего элемента в массиве
@@ -20,17 +19,17 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
     Procedure SaveF(var FName:string;gg:mas );
     Function WriteNumber(n:string;m:mas):string;
     procedure WriteReport(Var Result:Tmemo; Height:string; Time:real) ;
-    function CheckChicken(var Memo:Tmemo):boolean;
 implementation
 
 uses Unit1;
+
 
 Function CalculateTime(H:Real): Real;
 const
 G=9.8;
   begin
    CalculateTime:=sqrt(2*H/G);
-   UpdateMas(DataPoint,H);
+   UpdateMas(gege,H);
   end;
 
 
@@ -54,8 +53,8 @@ G=9.8;
   procedure UpdateMas (var gg: mas;H:Real);//добавляет новые данные в запись
   var i:integer;
      begin
-       inc(Point);
-      gg[Point].Height:=H;
+       i:=search(gg);
+      gg[i].Height:=H;
 
      end;
 
@@ -85,26 +84,13 @@ G=9.8;
             inc(c);
 
             result.Lines[c]:='Height='+Height;
-             result.Lines[c+1]:='Time='+FloatToStr(Time)+'(second)';
-              result.Lines[c+2]:='___________________________';
+             result.Lines[c+1]:='Time='+FloatToStr(Time),'####.#####'+'(second)';
+              result.Lines[c+2]:='____________________________';
+
+
+
      end;
 
-       function CheckChicken(var Memo:Tmemo):boolean;
-var i,c:integer;
-P,S:real;
-a:single;
-  begin
-     CheckChicken:=false;
-     if (TryStrToFloat(memo.lines[0],a)=false) then
-    begin
-      memo.Color:=clred;
-       ShowMessage('Oh, you entered the data incorrectly);');
-       exit
-     end
-  else
-   memo.Color:=clwhite;
-   CheckChicken:=true;
-  end;
       end.
 
 

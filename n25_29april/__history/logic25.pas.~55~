@@ -16,7 +16,7 @@ type ff= record
  Procedure Calculate(var ms: mas; X1,X2,X3,Y1,Y2,Y3:real ;var P,S:real);// -_-
  Procedure SaveF(Fn:string;mas:mas);
  procedure OpenF(FName:string;var mas:mas);
- Procedure CheckChicken(var Memo:Tmemo);
+ function CheckChicken(var Memo:Tmemo):boolean;
 implementation
 uses Unit1;
 
@@ -85,19 +85,21 @@ end;
 
 
 
-Procedure CheckChicken(var Memo:Tmemo);
+function CheckChicken(var Memo:Tmemo):boolean;
 var i,c:integer;
 P,S:real;
 a:single;
 begin
+ CheckChicken:=false;
 if (TryStrToFloat(memo.lines[0],a)=false) then
 begin
   memo.Color:=clred;
-  ShowMessage('Oh, you entered X1 wrong);');
-  exit;
+  ShowMessage('Oh, you entered the data incorrectly);');
+  exit
 end
 else
 memo.Color:=clwhite;
+CheckChicken:=true;
 end;
 
 

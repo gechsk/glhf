@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Calculating the time when a stone falls'
-  ClientHeight = 188
-  ClientWidth = 430
+  ClientHeight = 402
+  ClientWidth = 194
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,100 +12,161 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   DesignSize = (
-    430
-    188)
+    194
+    402)
   PixelsPerInch = 96
   TextHeight = 13
   object HeightLabel: TLabel
-    Left = 76
-    Top = 26
+    Left = 4
+    Top = 8
     Width = 35
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Height:'
   end
-  object TimeLabel: TLabel
-    Left = 85
-    Top = 66
-    Width = 26
-    Height = 13
-    Anchors = [akLeft, akBottom]
-    Caption = 'Time:'
-  end
   object Label1: TLabel
-    Left = 223
-    Top = 26
+    Left = 157
+    Top = 8
     Width = 28
     Height = 13
     Caption = 'metre'
   end
-  object Label2: TLabel
-    Left = 223
-    Top = 66
-    Width = 34
-    Height = 13
-    Caption = 'second'
-  end
   object Label3: TLabel
-    Left = 302
-    Top = 26
-    Width = 120
+    Left = 8
+    Top = 342
+    Width = 137
     Height = 13
-    Caption = #1074#1074#1077#1076#1080#1090#1077' '#1085#1086#1084#1077#1088' '#1088#1072#1089#1095#1105#1090#1072
+    Caption = 'Enter the calculation number'
   end
   object Calculate: TButton
-    Left = 76
-    Top = 109
-    Width = 181
-    Height = 55
+    Left = 8
+    Top = 295
+    Width = 178
+    Height = 38
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Calculate'
     TabOrder = 0
     OnClick = CalculateClick
   end
-  object Time: TMemo
-    Left = 117
-    Top = 63
-    Width = 100
-    Height = 21
-    Anchors = [akLeft, akBottom]
-    Lines.Strings = (
-      'Time')
-    TabOrder = 1
-  end
   object height: TMemo
-    Left = 117
-    Top = 23
-    Width = 100
+    Left = 45
+    Top = 5
+    Width = 106
     Height = 21
     Anchors = [akLeft, akBottom]
     CharCase = ecLowerCase
     Lines.Strings = (
       '10')
-    TabOrder = 2
+    TabOrder = 1
     WantReturns = False
     WordWrap = False
   end
   object Edit1: TEdit
-    Left = 301
-    Top = 45
-    Width = 121
+    Left = 151
+    Top = 339
+    Width = 38
     Height = 21
-    TabOrder = 3
-    Text = 'Edit1'
+    TabOrder = 2
+    Text = '2'
   end
   object Button1: TButton
-    Left = 320
-    Top = 72
-    Width = 75
-    Height = 25
-    Caption = #1042#1074#1086#1076
-    TabOrder = 4
+    Left = 8
+    Top = 366
+    Width = 181
+    Height = 30
+    Caption = 'Enter'
+    TabOrder = 3
     OnClick = Button1Click
   end
+  object Time: TMemo
+    Left = 4
+    Top = 32
+    Width = 181
+    Height = 258
+    Lines.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      '')
+    TabOrder = 4
+  end
   object MainMenu1: TMainMenu
-    Left = 16
+    Left = 640
     Top = 48
     object N1: TMenuItem
       Caption = 'File'
@@ -132,11 +193,11 @@ object Form1: TForm1
     end
   end
   object OpenDialog1: TOpenDialog
-    Left = 16
+    Left = 640
     Top = 96
   end
   object SaveDialog1: TSaveDialog
-    Left = 16
+    Left = 640
     Top = 136
   end
 end

@@ -5,11 +5,11 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus;
 
 
-  type Data = record
+  type ff= record
     Height :real;//входные данные
   end;
 
-  mas = array [1..128] of Data;
+  mas = array [1..128] of ff;
 
    TypeFile = file of mas;
    var Point:integer;
@@ -30,7 +30,7 @@ const
 G=9.8;
   begin
    CalculateTime:=sqrt(2*H/G);
-   UpdateMas(DataPoint,H);
+   UpdateMas(gege,H);
   end;
 
 
