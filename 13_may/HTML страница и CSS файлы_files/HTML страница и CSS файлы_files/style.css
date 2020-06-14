@@ -11,40 +11,40 @@
    */
   
 /*   основной цвет !!! */
-  --primary: #4444ff;
+  --primary: #231f20;
 
 /* освновной цвет текста !!! */
-  --text: #ab0;
+  --text: #231f20;
 
 /* дополнительный цвет !!! */
-  --secondary: #671;
+  --secondary: #f1f7f9;
 /* долполнительный цвет. светлый вариант !!! */
-  --secondary-light: #5f7;
+  --secondary-light: #9ad28b;
   
 /*   Акцидентный цвет и цвет шрифта на его фоне */
-  --accent: #f05;
-  --accent-text: #f0f;
+  --accent: #9ad28b ;
+  --accent-text: #231f20;
   
-  --accent2: #244d00;  /* используется только для подсветки кнопки акцидентного цвета при наведении */
-  --accent2-text: #ffffff;
+  --accent2:#231f20 ;  /* используется только для подсветки кнопки акцидентного цвета при наведении */
+  --accent2-text: #f1f7f9;
   
 /* основной размер шрифта !!! */
-  --size: 8px;
+  --size: 16px;
   
 /* остальные размеры текста 
    Они заданы для заголовкой и больших элементов 
   в относительных еденицах. За 1 принят размер текста в body.
   
   */
-  --size2: 1.15em;
-  --size3: 1.38em;
-  --size4: 1.9em;
+  --size2: 1.2em;
+  --size3: 1.5em;
+  --size4: 2.5em;
 }
 
 
 /* Для всей страницы !!! */
 body{
-  font-family: Courier, Times;    /* Основной и запасной шрифт */
+  font-family: Arial , Times;    /* Основной и запасной шрифт */
   /* Здесь задётся размер шрифта с помошью переменной. Переменная оборачивается в var*/
   font-weight: 800;
   font-size: var(--size);    
@@ -78,7 +78,7 @@ h1{
 }
 
 h2{
-  color: #000000;
+  color: #757170;
   font-size: var(--size3)
 }
 
@@ -96,6 +96,7 @@ header{                       /* !!! */
 
 /* Заголовок и подзаголовок вместе */
 .Title{
+  font-family: Comic Sans MS;
     /* Для заколовка можно задать особенный шрифт */
 /*   font-family: Georgia;      */
 }
@@ -129,7 +130,7 @@ header{                       /* !!! */
 .main-nav{
   background: var(--primary);  /* !!! */
   font-size: var(--size2);             /* --- */
-  margin-bottom: 30px;  
+  margin-bottom: 15px;  
 }
 
 
@@ -139,7 +140,7 @@ header{                       /* !!! */
   color: white;                 /* ---- */
   
   height: 100%;
-  padding: 29px;
+  padding: 30px;
 }
 
 
@@ -155,7 +156,7 @@ header{                       /* !!! */
 
 /* Основной раздел */
 .main-section{
-  margin-left: 15px;
+  margin-left: 0 px;
   background: var(--secondary-light);            /* !!! */
 }
 

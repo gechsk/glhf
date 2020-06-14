@@ -63,7 +63,7 @@ main section{
 footer{
   width: 100%;
   height: 100px;
-  background: gray;
+  background: #2b2a2a;
   
   display: flex;
   justify-content: space-around;
