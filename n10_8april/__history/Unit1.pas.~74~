@@ -38,17 +38,36 @@ type
   public
     { Public declarations }
   end;
+   function CheckChicken(var Mem:Tmemo):boolean;
 
 
 var
   Form1: TForm1;
-  gege: mas;
+  DataPoint: mas;
   FName:string;
+  H:real;
 
 
 implementation
 
 {$R *.dfm}
+
+function CheckChicken(var Mem:Tmemo):boolean;
+var i,c:integer;
+P,S:real;
+a:single;
+  begin
+     CheckChicken:=false;
+     if (TryStrToFloat(mem.lines[0],a)=false) then
+    begin
+      mem.Color:=clred;
+       ShowMessage('Oh, you entered the data incorrectly);');
+       exit
+     end
+  else
+   mem.Color:=clwhite;
+   CheckChicken:=true;
+  end;
 
  procedure TForm1.Button1Click(Sender: TObject);
  var
@@ -56,7 +75,7 @@ implementation
  begin
  if CheckChicken(number)=true then
  begin
-  height.lines[0]:=WriteNumber(number.Lines[0],gege);
+  height.lines[0]:=WriteNumber(number.Lines[0],DataPoint);
  end
  else
  exit;
@@ -70,7 +89,6 @@ var
    begin
    s:=StrToFloat(height.Lines[0]);
     TM:=CalculateTime(s);
-
      WriteReport(Time, Height.Lines[0], TM);
    end
    else
@@ -97,29 +115,34 @@ end;
 
 
 procedure TForm1.Open2Click(Sender: TObject);
- var f:TypeFile;
-begin
-if Form1.opendialog1.Execute then
-begin
-FName:= Form1.OpenDialog1.FileName;
-AssignFile (f,FName);
-reset(f);
-end;
-read(f,gege);
-CloseFile(f);
-Point:=(search(gege));
+ begin
+    if SaveDialog1.Execute then
+      begin
+        if SaveDialog1.FileName <> '' then
+          begin
+          load_params(H, SaveDialog1.FileName);
+          height.Lines[0]:=FloatToStr(h);
+          end;
+      end;
+
 end;
 
 procedure TForm1.Save2Click(Sender: TObject);
 begin
-if Form1.SaveDialog1.Execute then
-FName:= Form1.SaveDialog1.FileName;
-SaveF(FName,gege);
+    if SaveDialog1.Execute then
+        if SaveDialog1.FileName <> '' then
+          begin
+          H:=StrToFloat(Height.Lines[0]);
+          save_params(H, SaveDialog1.FileName);
+          end;
 end;
+
 procedure TForm1.SaveReport2Click(Sender: TObject);
 begin
   Time.Lines.SaveToFile( 'ReportFile.txt');
  ShowMessage('the report is saved.');
 end;
+
+
 
 end.

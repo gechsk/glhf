@@ -1,28 +1,25 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\Logic.pas',0,3,220,25,231,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\20.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,20103,20,20115,0,0,,
-File_2=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UClientBanck.pas',0,1,304,64,328,0,0,,
-File_3=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF4ZapBD.pas',0,1,69,52,108,0,0,,
-File_4=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF2ZapBD.pas',0,1,51,56,75,0,0,,
-File_5=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas',0,1,58,31,60,0,0,,
-File_6=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\U25.pas',0,1,1,8,79,0,0,,
-File_7=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.dfm',0,1,1,1,1,0,0,,
-File_8=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF3ZapBD.pas',0,1,1,1,1,0,0,,
-File_9=TSourceModule,'C:\Users\Евгений\Desktop\PClienBanck.exe',0,1,1,1,1,0,0,,
-File_10=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_ZapForm.pas',0,1,52,27,55,0,0,,
-File_11=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_MainForm.pas',0,1,186,23,192,0,0,,
-File_12=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_material.pas',0,1,228,28,240,0,0,{{41,43}
-File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\20.0\SOURCE\RTL\SYS\System.pas',0,1,55,1,12,0,0,,
+File_0=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\n25_29april\logic25.pas',0,1,1,21,103,0,0,,
+File_1=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\n25_29april\Unit1.pas',0,1,151,1,1,0,0,,
+File_2=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\Logic.pas',0,3,220,25,231,0,0,,
+File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\20.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,20103,20,20115,0,0,,
+File_4=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UClientBanck.pas',0,1,304,64,328,0,0,,
+File_5=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF4ZapBD.pas',0,1,69,52,108,0,0,,
+File_6=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF2ZapBD.pas',0,1,51,56,75,0,0,,
+File_7=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.pas',0,1,58,31,60,0,0,,
+File_8=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\U25.pas',0,1,1,8,79,0,0,,
+File_9=TSourceModule,'C:\Users\Евгений\Desktop\ЧМВ\29 april\Unit1.dfm',0,1,1,1,1,0,0,,
+File_10=TSourceModule,'C:\Users\Евгений\Desktop\Курсовая\Прога\UF3ZapBD.pas',0,1,1,1,1,0,0,,
+File_11=TSourceModule,'C:\Users\Евгений\Desktop\PClienBanck.exe',0,1,1,1,1,0,0,,
+File_12=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_ZapForm.pas',0,1,52,27,55,0,0,,
+File_13=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_MainForm.pas',0,1,186,23,192,0,0,,
+File_14=TSourceModule,'C:\Users\Евгений\Desktop\Курсач ильи\курсовая работа\программа\Unit_material.pas',0,1,228,28,240,0,0,{{41,43}
 
 [Modules]
-Module0=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Project1.dproj
-Module1=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas
-Module2=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\logic.pas
-Count=3
+Module0=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas
+Module1=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\logic.pas
+Count=2
 EditWindowCount=1
-
-[C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Project1.dproj]
-ModuleType=TBaseProject
 
 [C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas]
 ModuleType=TSourceModule
@@ -31,11 +28,10 @@ ModuleType=TSourceModule
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=3
-CurrentEditView=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Project1.dpr
+ViewCount=2
+CurrentEditView=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas
 View0=0
 View1=1
-View2=2
 PercentageSizes=1
 Create=1
 Visible=1
@@ -67,32 +63,21 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 
 [View0]
 CustomEditViewType=TEditView
-Module=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Project1.dpr
+Module=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas
 CursorX=1
-CursorY=1
-TopLine=1
+CursorY=142
+TopLine=53
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Project1.dpr
+EditViewName=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas
 
 [View1]
 CustomEditViewType=TEditView
-Module=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\Unit1.pas
-CursorX=1
-CursorY=1
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=Borland.FormDesignerView
-
-[View2]
-CustomEditViewType=TEditView
 Module=C:\Users\Евгений\Desktop\ЧМВ\n10_8april\logic.pas
-CursorX=1
-CursorY=1
-TopLine=7
+CursorX=28
+CursorY=36
+TopLine=3
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -252,8 +237,8 @@ SplitPos=44
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems=Anchors=0
+SelectedItem=Name,
+ExpandedItems="LiveBindings Designer=0"
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -504,8 +489,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-218
-Top=-285
+Left=-270
+Top=-337
 Width=1845
 Height=3146
 MaxLeft=-1

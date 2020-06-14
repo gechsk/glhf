@@ -7,6 +7,7 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
 
   type Data = record
     Height :real;//входные данные
+    Time:real;
   end;
 
   mas = array [1..128] of Data;
@@ -16,11 +17,11 @@ Uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.C
 
     Function CalculateTime(H:Real):Real;
     function search(u:mas):byte;//поиск последнего элемента в массиве
-    procedure UpdateMas (var gg: mas;H:Real);//добавляет новые данные в запись
-    Procedure SaveF(var FName:string;gg:mas );
+    procedure UpdateMas (var gg: mas;H,TM:Real);//добавляет новые данные в запись
     Function WriteNumber(n:string;m:mas):string;
     procedure WriteReport(Var Result:Tmemo; Height:string; Time:real) ;
-    function CheckChicken(var Memo:Tmemo):boolean;
+     procedure save_params(H: Real; filename: string);
+     procedure load_params(var H: Real; filename: string);
 implementation
 
 uses Unit1;
@@ -28,9 +29,11 @@ uses Unit1;
 Function CalculateTime(H:Real): Real;
 const
 G=9.8;
+var TM:real;
   begin
-   CalculateTime:=sqrt(2*H/G);
-   UpdateMas(DataPoint,H);
+   TM:=sqrt(2*H/G);
+   CalculateTime:=TM;
+   UpdateMas(DataPoint,H,TM);
   end;
 
 
@@ -51,23 +54,16 @@ G=9.8;
       search:=i;
   end;
 
-  procedure UpdateMas (var gg: mas;H:Real);//добавляет новые данные в запись
+  procedure UpdateMas (var gg: mas;H,TM:Real);//добавляет новые данные в запись
   var i:integer;
      begin
        inc(Point);
       gg[Point].Height:=H;
+      gg[Point].Time:=TM;
 
      end;
 
 
-     Procedure SaveF(var FName:string;gg:mas );
-     var f:TypeFile;
-     begin
-     AssignFile(f,FName);
-     Rewrite(f);
-        Write(f,gg);
-     CloseFile(f);
-     end;
 
      Function WriteNumber(n:string;m:mas):string;
      var
@@ -89,22 +85,28 @@ G=9.8;
               result.Lines[c+2]:='___________________________';
      end;
 
-       function CheckChicken(var Memo:Tmemo):boolean;
-var i,c:integer;
-P,S:real;
-a:single;
+
+  procedure save_params(H: Real; filename: string);
+  var
+    f: text;
   begin
-     CheckChicken:=false;
-     if (TryStrToFloat(memo.lines[0],a)=false) then
-    begin
-      memo.Color:=clred;
-       ShowMessage('Oh, you entered the data incorrectly);');
-       exit
-     end
-  else
-   memo.Color:=clwhite;
-   CheckChicken:=true;
+       assign(f, filename);
+       rewrite(f);
+       writeln(f, H);
+       close(f);
   end;
+
+  procedure load_params(var H: Real; filename: string);
+  var
+    //buf: string;
+    f: text;
+  begin
+      assign(f, filename);
+      reset(f);
+      readln(f, H);
+      close(f);
+  end;
+
       end.
 
 

@@ -44,15 +44,34 @@ type
   public
     { Public declarations }
   end;
+  function CheckChicken(var Memo:Tmemo):boolean;
 
 var
   Form1: TForm1;
   DataStorege:mas;
   f: TypeFile;
+  X1R,X2R,X3R,Y1R,Y2R,Y3R:real;
 
 implementation
 
 {$R *.dfm}
+
+function CheckChicken(var Memo:Tmemo):boolean;
+var i,c:integer;
+P,S:real;
+a:single;
+begin
+ CheckChicken:=false;
+if (TryStrToFloat(memo.lines[0],a)=false) then
+begin
+  memo.Color:=clred;
+  ShowMessage('Oh, you entered the data incorrectly);');
+  exit
+end
+else
+memo.Color:=clwhite;
+CheckChicken:=true;
+end;
 
 procedure TForm1.Clise1Click(Sender: TObject);
 begin
@@ -101,30 +120,43 @@ end;
 
 procedure TForm1.Open1Click(Sender: TObject);
 
-var
-FName: string;
 begin
-if Form1.opendialog2.Execute then
-begin
-FName:= Form1.OpenDialog2.FileName;
-OpenF(FName,DataStorege);
-end;
+    if SaveDialog1.Execute then
+      begin
+        if SaveDialog1.FileName <> '' then  // пользователь мог не выбрать имя файла, а просто закрыть окно//
+          begin
+          load_params(X1R,X2R,X3R,Y1R,Y2R,Y3R, SaveDialog1.FileName);
+          X1.Lines[0]:=FloatToStr(X1r);
+          X2.Lines[0]:=FloatToStr(X2R);
+          X3.Lines[0]:=FloatToStr(X3R);
+          Y1.Lines[0]:=FloatToStr(Y1R);
+          Y2.Lines[0]:=FloatToStr(Y2R);
+          Y3.Lines[0]:=FloatToStr(Y3R);
+          end;
+      end;
 
 end;
 procedure TForm1.Save2Click(Sender: TObject);
 var
 Fname:string;
 begin
-if Form1.SaveDialog1.Execute then
-begin
-FName:= Form1.SaveDialog1.FileName;
-SaveF(FName,DataStorege);
+if SaveDialog1.Execute then
+    if SaveDialog1.FileName <> '' then  // пользователь мог не выбрать имя файла, а просто закрыть окно
+          begin
+          X1R:=StrToFloat(X1.Lines[0]);
+           X2R:=StrToFloat(X2.Lines[0]);
+           X3R:=StrToFloat(X3.Lines[0]);
+           Y1R:=StrToFloat(Y1.Lines[0]);
+           Y2R:=StrToFloat(Y2.Lines[0]);
+           Y3R:=StrToFloat(Y3.Lines[0]);
+          save_params(X1r,X2r,X3r,Y1r,Y2r,Y3r, SaveDialog1.FileName);
+          end;
 end;
-end;
+
 
 procedure TForm1.SaveReport2Click(Sender: TObject);
 begin
-Form1.TSG.cols[1].SaveToFile('ReportFilesss.txt');
+TSG.cols[1].SaveToFile('ReportFilesss.txt');
 end;
 
 
@@ -133,7 +165,6 @@ end;
 
 procedure TForm1.СalculateClick(Sender: TObject);
 var i,c:integer;
-P,S:real;
 a:single;
 begin
 
@@ -149,7 +180,7 @@ TSG.Cells[1,0]:='Результат';
    TSG.Cells[3,0]:='Точка B';
    TSG.Cells[4,0]:='Точка C';
    c:= (search(DataStorege))*2;
- Calculate(DataStorege, StrToFloat(X1.Lines[0]),StrToFloat(X2.Lines[0]),StrToFloat(X3.Lines[0]),StrToFloat(Y1.Lines[0]),StrToFloat(Y2.Lines[0]),StrToFloat(Y3.Lines[0]),P,S);
+ Calculate(DataStorege, StrToFloat(X1.Lines[0]),StrToFloat(X2.Lines[0]),StrToFloat(X3.Lines[0]),StrToFloat(Y1.Lines[0]),StrToFloat(Y2.Lines[0]),StrToFloat(Y3.Lines[0]));
          i:= search(DataStorege);
 
 
@@ -163,8 +194,8 @@ TSG.Cells[1,0]:='Результат';
   TSG.Cells[3,c]:='Y:'+FloatToStr(DataStorege[i].Y2);
   TSG.Cells[4,c-1]:='X:'+FloatToStr(DataStorege[i].X3);
   TSG.Cells[4,c]:='Y:'+FloatToStr(DataStorege[i].Y3);
-  Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',P);//ограничение количества знаков после запятой
-  Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',S);
+  Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',DataStorege[i].P);//ограничение количества знаков после запятой
+  Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',DataStorege[i].S);
 
 end
 else

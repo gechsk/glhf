@@ -115,12 +115,19 @@ procedure TForm1.Save2Click(Sender: TObject);
 var
 Fname:string;
 begin
-if Form1.SaveDialog1.Execute then
-begin
-FName:= Form1.SaveDialog1.FileName;
-SaveF(FName,DataStorege);
+if SaveDialog1.Execute then
+    if SaveDialog1.FileName <> '' then  // пользователь мог не выбрать имя файла, а просто закрыть окно
+          begin
+          X1:=StrToFloat(X1.Lines[0]);
+           X2:=StrToFloat(X2.Lines[0]);
+           X3:=StrToFloat(X3.Lines[0]);
+           Y1:=StrToFloat(Y1.Lines[0]);
+           Y2:=StrToFloat(Y2.Lines[0]);
+           Y3:=StrToFloat(Y3.Lines[0]);
+          save_params(X1,X2,X3,Y1,Y2,Y3, SaveDialog1.FileName);
+          end;
 end;
-end;
+
 
 procedure TForm1.SaveReport2Click(Sender: TObject);
 begin
@@ -136,37 +143,14 @@ var i,c:integer;
 P,S:real;
 a:single;
 begin
-if (TryStrToFloat(X1.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X1 wrong);');
-  exit;
-end;
 
-if (TryStrToFloat(X2.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X2 wrong);');
-  exit;
-end;
-if (TryStrToFloat(X3.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered X3 wrong);');
-  exit;
-end;
-if (TryStrToFloat(Y1.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered Y1 wrong);');
-  exit;
-end;
-if (TryStrToFloat(Y2.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered Y2 wrong);');
-  exit;
-end;
-if (TryStrToFloat(Y3.lines[0],a)=false) then
-begin
-  ShowMessage('Oh, you entered Y3 wrong);');
-  exit;
-end;
+if CheckChicken (X1) and CheckChicken (X2) and CheckChicken (X3) and CheckChicken (Y1) and CheckChicken (Y2) and CheckChicken (Y3)=true then
+
+
+
+
+
+ begin
 TSG.Cells[1,0]:='Результат';
    TSG.Cells[2,0]:='Точка A';
    TSG.Cells[3,0]:='Точка B';
@@ -189,6 +173,8 @@ TSG.Cells[1,0]:='Результат';
   Form1.TSG.Cells[1,c-1]:=FormatFloat('#####.###',P);//ограничение количества знаков после запятой
   Form1.TSG.Cells[1,c]:=FormatFloat('#####.###',S);
 
-
+end
+else
+exit;
 end;
 end.
