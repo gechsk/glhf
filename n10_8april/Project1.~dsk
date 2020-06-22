@@ -233,12 +233,7 @@ TBDockHeight=5192
 LRDockWidth=886
 Dockable=1
 StayOnTop=0
-SplitPos=44
-
-[PropInspDesignerSelection]
-ArrangeBy=Name
-SelectedItem=Name,
-ExpandedItems="LiveBindings Designer=0"
+SplitPos=61
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -489,8 +484,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-270
-Top=-337
+Left=-192
+Top=-259
 Width=1845
 Height=3146
 MaxLeft=-1
@@ -574,11 +569,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=886
+Width=1896
 Height=3379
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=886
+ClientWidth=1896
 ClientHeight=3379
 TBDockHeight=3681
 LRDockWidth=1896
