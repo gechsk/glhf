@@ -38,6 +38,7 @@ type
   public
     { Public declarations }
   end;
+   function CheckChicken(var Mem:Tmemo):boolean;
 
 
 var
@@ -50,6 +51,23 @@ var
 implementation
 
 {$R *.dfm}
+
+function CheckChicken(var Mem:Tmemo):boolean;
+var i,c:integer;
+P,S:real;
+a:single;
+  begin
+     CheckChicken:=false;
+     if (TryStrToFloat(mem.lines[0],a)=false) then
+    begin
+      mem.Color:=clred;
+       ShowMessage('Oh, you entered the data incorrectly);');
+       exit
+     end
+  else
+   mem.Color:=clwhite;
+   CheckChicken:=true;
+  end;
 
  procedure TForm1.Button1Click(Sender: TObject);
  var
@@ -71,7 +89,6 @@ var
    begin
    s:=StrToFloat(height.Lines[0]);
     TM:=CalculateTime(s);
-
      WriteReport(Time, Height.Lines[0], TM);
    end
    else
@@ -125,5 +142,7 @@ begin
   Time.Lines.SaveToFile( 'ReportFile.txt');
  ShowMessage('the report is saved.');
 end;
+
+
 
 end.
